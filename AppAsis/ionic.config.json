@@ -1,0 +1,7 @@
+{
+  "name": "AppAsis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

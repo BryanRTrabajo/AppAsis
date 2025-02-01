@@ -1,0 +1,10 @@
+ion-card {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      background-color: rgba(210, 23, 179, 0.8); 
+      box-shadow: 0 8px 30px rgba(169, 8, 120, 0.559);   
+      transform: scale(1.01);                   
+      filter: brightness(1.2);          
+    }
+  }

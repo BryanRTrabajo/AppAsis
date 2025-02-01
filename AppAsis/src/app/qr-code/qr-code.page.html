@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Escanee el código Qr para quedar presente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ clase }}</ion-card-title>
+      <ion-card-subtitle>ID: {{ id }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <div class="qr-container">
+    <ion-card>
+      <ion-card-content>
+        <img [src]="'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + qrCodeData" />
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-label>
+        {{ alumno.nombre }}
+      </ion-label>
+      <ion-badge color="{{ alumno.status === 1 ? 'success' : 'danger' }}">
+        {{ alumno.status === 1 ? 'Presente' : 'Ausente' }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

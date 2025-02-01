@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="login-content">
+
+  <div class="centered-container">
+    <img src="assets/icon/logo-duoc.png" alt="duoc logo" class="login-image">
+  </div>
+
+  <div class="centered-container form">
+    <form [formGroup]="usuario">
+      <ion-item>
+        <ion-input label="User" labelPlacement="floating" placeholder="User" formControlName="user"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Pass" labelPlacement="floating" placeholder="Pass" formControlName="pass"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block"  (click)="navegar()" fill="outline">Ingresar</ion-button>
+    </form>
+  </div>
+</ion-content>

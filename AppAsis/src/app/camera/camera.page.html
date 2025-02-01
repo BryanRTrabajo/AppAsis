@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cámara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <ion-text color="primary">
+      <h2 class="instruction-text">Toma una foto para registrar tu asistencia</h2>
+    </ion-text>
+
+    <div class="foto-container">
+      <div *ngIf="foto; else placeholder">
+        <img [src]="foto" alt="Foto capturada" class="foto" />
+      </div>
+      <ng-template #placeholder>
+        <div class="placeholder">
+          <ion-icon name="camera" class="camera-icon"></ion-icon>
+          <p>Presiona el botón para tomar una foto</p>
+        </div>
+      </ng-template>
+    </div>
+
+    <div *ngIf="curso" class="class-name">
+      <ion-text color="dark">
+        <h3>{{ curso.nombre }}</h3>
+      </ion-text>
+    </div>
+
+    <ion-button expand="block" (click)="tomarFoto()" class="capture-button">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      Tomar Foto
+    </ion-button>
+  </div>
+</ion-content>
